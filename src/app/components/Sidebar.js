@@ -3,44 +3,42 @@ import { useApp } from '../context/AppContext';
 import styles from './Sidebar.module.css';
 
 const NAV = [
-  { id: 'dashboard',     icon: '⬡', label: 'Dashboard' },
-  { id: 'jobs',          icon: '🔍', label: 'Job Matches' },
-  { id: 'applications',  icon: '📋', label: 'Applications' },
-  { id: 'profile',       icon: '👤', label: 'My Profile' },
+  { id: 'dashboard',     icon: '⬡',  label: 'Dashboard'     },
+  { id: 'jobs',          icon: '🔍', label: 'Job Matches'   },
+  { id: 'applications',  icon: '📋', label: 'Applications'  },
+  { id: 'profile',       icon: '👤', label: 'My Profile'    },
   { id: 'notifications', icon: '🔔', label: 'Notifications' },
 ];
 
 export default function Sidebar() {
-  const { state, dispatch, startAutomation, stopAutomation } = useApp();
-  const { stats, automationRunning, notifications, activeTab } = state;
+  const { state, dispatch, scanJobs } = useApp();
+  const { stats, notifications, activeTab, scanning } = state;
   const unread = notifications.length;
 
   return (
     <aside className={styles.sidebar}>
       {/* Logo */}
       <div className={styles.logo}>
-        <div className={styles.logoIcon}>
-          <span>AI</span>
-        </div>
+        <div className={styles.logoIcon}><span>AI</span></div>
         <div>
-          <div className={styles.logoTitle}>JobAgent</div>
-          <div className={styles.logoSub}>AI-Powered</div>
+          <div className={styles.logoTitle}>JobFinder</div>
+          <div className={styles.logoSub}>Real Job Links</div>
         </div>
       </div>
 
-      {/* Automation Toggle */}
+      {/* Find Jobs button */}
       <div className={styles.automation}>
-        <div className={styles.automationStatus}>
-          <span className={`status-dot ${automationRunning ? 'online' : 'pending'}`} />
-          <span className={styles.automationLabel}>{automationRunning ? 'Agent Active' : 'Agent Stopped'}</span>
-        </div>
         <button
-          className={`btn ${automationRunning ? 'btn-danger' : 'btn-success'} btn-sm`}
-          onClick={automationRunning ? stopAutomation : startAutomation}
-          style={{ width: '100%', justifyContent: 'center', marginTop: 8 }}
+          className="btn btn-primary btn-sm"
+          onClick={scanJobs}
+          disabled={scanning}
+          style={{ width:'100%', justifyContent:'center' }}
         >
-          {automationRunning ? '⏹ Stop Agent' : '▶ Start Agent'}
+          {scanning ? '⟳ Searching…' : '🔍 Find Jobs Now'}
         </button>
+        <div className={styles.automationStatus} style={{ marginTop:8, fontSize:11, color:'rgba(255,255,255,0.4)', textAlign:'center' }}>
+          Searches 7 real platforms
+        </div>
       </div>
 
       {/* Nav */}
@@ -55,9 +53,6 @@ export default function Sidebar() {
             <span className={styles.navLabel}>{item.label}</span>
             {item.id === 'notifications' && unread > 0 && (
               <span className={styles.badge}>{unread > 9 ? '9+' : unread}</span>
-            )}
-            {item.id === 'applications' && stats.pendingManual > 0 && (
-              <span className={`${styles.badge} ${styles.badgeWarn}`}>{stats.pendingManual}</span>
             )}
           </button>
         ))}
@@ -74,8 +69,8 @@ export default function Sidebar() {
           <span className={styles.qLabel}>Matches</span>
         </div>
         <div className={styles.qStat}>
-          <span className={styles.qNum}>{stats.successRate}%</span>
-          <span className={styles.qLabel}>Success</span>
+          <span className={styles.qNum}>{stats.totalSaved || 0}</span>
+          <span className={styles.qLabel}>Saved</span>
         </div>
       </div>
 

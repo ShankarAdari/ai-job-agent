@@ -11,26 +11,13 @@ import { useApp } from '../context/AppContext';
 
 export default function AppShell() {
   const { state } = useApp();
-  const { activeTab, applying, currentlyApplying, jobs } = state;
-
-  const applyingJob = jobs.find(j => j.id === currentlyApplying);
+  const { activeTab } = state;
 
   return (
     <div className={styles.shell}>
       <Sidebar />
 
       <main className={styles.main}>
-        {/* Applying overlay banner */}
-        {applying && applyingJob && (
-          <div className={styles.applyingBanner}>
-            <span className="animate-spin" style={{ display: 'inline-block', fontSize: 16 }}>⟳</span>
-            <span>
-              AI agent is submitting your application to{' '}
-              <strong>{applyingJob.title}</strong> at{' '}
-              <strong>{applyingJob.company}</strong> via {applyingJob.platform}…
-            </span>
-          </div>
-        )}
 
         {/* Views */}
         <div className={styles.view}>
