@@ -15,7 +15,7 @@ const TECH_OPTIONS = ['React','Next.js','TypeScript','JavaScript','Node.js','Pyt
 const ROLE_OPTIONS = ['Frontend Engineer','Full Stack Engineer','Backend Engineer','Software Engineer','ML Engineer','Data Scientist','DevOps Engineer','Developer Advocate','Product Manager'];
 
 export default function Onboarding() {
-  const { state, dispatch, parseResume, startAutomation } = useApp();
+  const { state, dispatch, parseResume, scanJobs } = useApp();
   const { currentStep, profile } = state;
   const fileRef = useRef(null);
   const [errors, setErrors] = useState({});
@@ -73,7 +73,7 @@ Experience: Senior Frontend Engineer (2022–present), Full Stack Developer (202
 
   const finish = () => {
     dispatch({ type: 'COMPLETE_ONBOARDING' });
-    startAutomation();
+    scanJobs();
   };
 
   const progress = ((currentStep) / (STEPS.length - 1)) * 100;
