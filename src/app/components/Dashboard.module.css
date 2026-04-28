@@ -1,0 +1,135 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  animation: fadeInUp 0.5s ease;
+}
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 28px;
+  font-weight: 800;
+  background: linear-gradient(135deg, #fff 40%, rgba(255,255,255,0.6));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 4px;
+}
+
+.subtitle { font-size: 14px; color: rgba(255,255,255,0.5); }
+
+.headerActions { display: flex; gap: 10px; flex-wrap: wrap; }
+
+/* Stat Cards */
+.statCard {
+  padding: 24px;
+  position: relative;
+  overflow: hidden;
+  cursor: default;
+}
+
+.statIcon { font-size: 28px; margin-bottom: 12px; }
+.statValue {
+  font-family: 'Outfit', sans-serif;
+  font-size: 38px;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+.statLabel { font-size: 13px; font-weight: 600; color: rgba(255,255,255,0.6); }
+.statSub   { font-size: 11px; color: rgba(255,255,255,0.35); margin-top: 2px; }
+.statGlow {
+  position: absolute;
+  bottom: -20px; right: -20px;
+  width: 80px; height: 80px;
+  background: var(--accent, #6c63ff);
+  opacity: 0.08;
+  border-radius: 50%;
+  filter: blur(20px);
+}
+
+/* Middle row */
+.midRow { display: grid; grid-template-columns: 1fr 340px; gap: 20px; }
+@media (max-width: 900px) { .midRow { grid-template-columns: 1fr; } }
+
+/* Section headers */
+.sectionHeader { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+.sectionTitle  { font-size: 15px; font-weight: 700; color: rgba(255,255,255,0.9); }
+
+/* Top matches */
+.topMatches { padding: 20px; }
+
+.matchCard {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 12px;
+  margin-bottom: 10px;
+  transition: all 0.2s;
+}
+.matchCard:hover {
+  background: rgba(255,255,255,0.06);
+  border-color: rgba(255,255,255,0.12);
+  transform: translateX(4px);
+}
+
+.matchLogo {
+  width: 44px; height: 44px;
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 11px; font-weight: 800; color: #fff;
+  flex-shrink: 0;
+}
+
+.matchInfo { flex: 1; min-width: 0; }
+.matchTitle   { font-size: 13px; font-weight: 700; color: rgba(255,255,255,0.9); margin-bottom: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.matchCompany { font-size: 11px; color: rgba(255,255,255,0.5); margin-bottom: 2px; }
+.matchSalary  { font-size: 11px; color: #00d4aa; font-weight: 600; }
+
+.matchScore { text-align: center; flex-shrink: 0; }
+.scoreNum { font-family: 'Outfit', sans-serif; font-size: 20px; font-weight: 800; color: #fff; margin-bottom: 4px; }
+.scorePlatform { font-size: 9px; margin-top: 4px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
+
+/* Platform stats */
+.platformStats { padding: 20px; }
+.platformRow {
+  display: flex; align-items: center; gap: 8px;
+  margin-bottom: 14px;
+}
+.platformName { font-size: 12px; font-weight: 700; width: 80px; flex-shrink: 0; }
+.platformCount { font-size: 13px; font-weight: 700; color: rgba(255,255,255,0.8); width: 24px; text-align: right; }
+.lastScan { font-size: 11px; color: rgba(255,255,255,0.3); text-align: center; margin-top: 8px; }
+
+/* Activity */
+.activity { padding: 20px; }
+
+.activityList { display: flex; flex-direction: column; gap: 8px; }
+.activityItem {
+  display: flex; align-items: center; gap: 12px;
+  padding: 12px;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 10px;
+  transition: background 0.2s;
+}
+.activityItem:hover { background: rgba(255,255,255,0.05); }
+
+.activityDot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+.activityInfo { flex: 1; min-width: 0; }
+.activityTitle   { font-size: 13px; font-weight: 600; color: rgba(255,255,255,0.85); display: block; }
+.activityCompany { font-size: 11px; color: rgba(255,255,255,0.45); }
+.activityRight   { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; }
+.activityPlatform { font-size: 10px; font-weight: 700; }
+
+.empty { text-align: center; padding: 40px 20px; color: rgba(255,255,255,0.35); font-size: 14px; }

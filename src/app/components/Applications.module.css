@@ -1,0 +1,112 @@
+.container { display: flex; flex-direction: column; gap: 20px; animation: fadeInUp 0.5s ease; }
+
+.header { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 12px; }
+.title   { font-family: 'Outfit', sans-serif; font-size: 26px; font-weight: 800; color: #fff; }
+.subtitle{ font-size: 13px; color: rgba(255,255,255,0.45); margin-top: 4px; }
+
+.summaryCard {
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+  border: 1px solid rgba(255,255,255,0.08) !important;
+  background: rgba(255,255,255,0.03);
+  transition: all 0.2s;
+}
+.summaryCard:hover {
+  background: rgba(255,255,255,0.07);
+  border-color: var(--accent, #6c63ff) !important;
+}
+.summaryActive {
+  background: rgba(108,99,255,0.1) !important;
+  border-color: var(--accent) !important;
+  box-shadow: 0 0 20px rgba(108, 99, 255, 0.2) !important;
+}
+.summaryIcon  { font-size: 22px; margin-bottom: 8px; }
+.summaryNum   { font-family: 'Outfit', sans-serif; font-size: 32px; font-weight: 800; color: #fff; line-height: 1; }
+.summaryLabel { font-size: 12px; color: rgba(255,255,255,0.5); margin-top: 4px; }
+
+.successBar {
+  padding: 16px 20px;
+}
+.successLabel  { display: flex; justify-content: space-between; font-size: 13px; color: rgba(255,255,255,0.7); font-weight: 600; }
+.successHint   { font-size: 11px; color: rgba(255,255,255,0.35); margin-top: 6px; }
+
+.group { }
+.groupDate {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(255,255,255,0.35);
+  margin-bottom: 10px;
+  padding-left: 4px;
+}
+
+.appList { display: flex; flex-direction: column; gap: 8px; }
+
+.appRow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 12px;
+  transition: all 0.2s;
+  flex-wrap: wrap;
+}
+.appRow:hover {
+  background: rgba(255,255,255,0.06);
+  border-color: rgba(255,255,255,0.12);
+}
+
+.statusIcon {
+  width: 36px; height: 36px;
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 14px; font-weight: 700;
+  flex-shrink: 0;
+}
+
+.appInfo { flex: 1; min-width: 160px; }
+.appTitle   { font-size: 13px; font-weight: 700; color: rgba(255,255,255,0.9); }
+.appCompany { font-size: 12px; color: rgba(255,255,255,0.45); margin-top: 2px; }
+
+.appMeta { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; flex-shrink: 0; }
+.appTime { font-size: 11px; color: rgba(255,255,255,0.35); }
+
+.appStatus { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; flex-shrink: 0; }
+.manualLink {
+  font-size: 11px;
+  color: #ff9f43;
+  text-decoration: none;
+  font-weight: 600;
+}
+.manualLink:hover { text-decoration: underline; }
+
+.appLinks { display: flex; flex-direction: column; gap: 4px; align-items: flex-end; margin: 4px 0; }
+
+.appLink {
+  font-size: 10px;
+  color: #6c63ff;
+  text-decoration: none;
+  font-weight: 600;
+  background: rgba(108,99,255,0.1);
+  border: 1px solid rgba(108,99,255,0.2);
+  border-radius: 5px;
+  padding: 3px 8px;
+  transition: all 0.15s;
+  white-space: nowrap;
+}
+.appLink:hover {
+  background: rgba(108,99,255,0.22);
+  color: #a29bfe;
+}
+
+.empty {
+  text-align: center;
+  padding: 60px 20px;
+  color: rgba(255,255,255,0.4);
+}
+.empty h2 { font-size: 20px; font-weight: 700; color: rgba(255,255,255,0.6); margin: 12px 0 8px; }
+.empty p  { font-size: 14px; }

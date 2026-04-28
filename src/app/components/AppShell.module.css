@@ -1,0 +1,45 @@
+.shell {
+  display: flex;
+  min-height: 100vh;
+  position: relative;
+}
+
+.main {
+  flex: 1;
+  margin-left: 240px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .main { margin-left: 0; }
+}
+
+.applyingBanner {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 24px;
+  background: linear-gradient(135deg, rgba(108,99,255,0.25), rgba(108,99,255,0.1));
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(108,99,255,0.3);
+  font-size: 13px;
+  color: rgba(255,255,255,0.85);
+  animation: fadeIn 0.3s ease;
+}
+
+.view {
+  padding: 28px 32px;
+  flex: 1;
+  max-width: 1400px;
+}
+
+@media (max-width: 1100px) {
+  .view { padding: 20px 20px; }
+}

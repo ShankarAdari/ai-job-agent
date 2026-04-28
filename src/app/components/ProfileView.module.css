@@ -1,0 +1,77 @@
+.container { display: flex; flex-direction: column; gap: 20px; animation: fadeInUp 0.5s ease; }
+
+.header { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+.title  { font-family: 'Outfit', sans-serif; font-size: 26px; font-weight: 800; color: #fff; }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+@media (max-width: 900px) { .grid { grid-template-columns: 1fr; } }
+
+.section { padding: 22px 24px; }
+
+.sectionTitle {
+  font-size: 14px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.8);
+  margin-bottom: 18px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Drop zone */
+.dropZone {
+  border: 2px dashed rgba(108,99,255,0.35);
+  border-radius: 14px;
+  padding: 36px 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.25s;
+  background: rgba(108,99,255,0.04);
+}
+.dropZone:hover {
+  border-color: rgba(108,99,255,0.7);
+  background: rgba(108,99,255,0.08);
+}
+
+.uploadIcon { font-size: 36px; margin-bottom: 12px; color: #6c63ff; }
+.uploadText { font-size: 14px; font-weight: 600; color: rgba(255,255,255,0.7); margin-bottom: 6px; }
+.uploadHint { font-size: 12px; color: rgba(255,255,255,0.35); }
+
+.fileIcon { font-size: 40px; margin-bottom: 8px; }
+.fileName { font-size: 14px; font-weight: 600; color: #00d4aa; margin-bottom: 4px; }
+.fileHint { font-size: 11px; color: rgba(255,255,255,0.35); }
+
+.extractedSkills { margin-top: 16px; }
+.extractedTitle  { font-size: 12px; font-weight: 700; color: rgba(255,255,255,0.5); margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.05em; }
+.skillTags       { display: flex; flex-wrap: wrap; gap: 4px; }
+
+/* Toggle buttons */
+.toggleGroup { display: flex; flex-wrap: wrap; gap: 8px; }
+.toggleBtn {
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.04);
+  color: rgba(255,255,255,0.55);
+  transition: all 0.2s;
+  font-family: 'Inter', sans-serif;
+}
+.toggleBtn:hover {
+  background: rgba(255,255,255,0.08);
+  color: rgba(255,255,255,0.85);
+  border-color: rgba(255,255,255,0.2);
+}
+.toggleActive {
+  background: rgba(108,99,255,0.2) !important;
+  color: #a29bfe !important;
+  border-color: rgba(108,99,255,0.4) !important;
+}
